@@ -18,3 +18,5 @@ if __name__ == '__main__':
 	print (cat)
 	dog = Pet('dexter', 'dog')
 	print (dog)
+	lion = Pet('simba', 'lion')
+	print (lion)
