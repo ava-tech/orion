@@ -18,12 +18,15 @@ public class MainFrame extends JFrame{
         textArea = new JTextArea();
         btn =  new JButton("Click Me");
 
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                textArea.append("Hello\n");
-            }
-        });
+//        btn.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                textArea.append("Hello\n");
+//            }
+//        });
+
+        WinAction winAction =  new WinAction();
+        btn.addActionListener(winAction);
 
         add(textArea, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);
@@ -31,5 +34,13 @@ public class MainFrame extends JFrame{
         setSize(500, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+    }
+
+    class WinAction implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            textArea.append("Hello\n");
+        }
     }
 }
